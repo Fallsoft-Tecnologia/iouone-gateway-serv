@@ -19,8 +19,8 @@ public class MsgatewayApplication {
 	public RouteLocator routes(RouteLocatorBuilder builder) {
 		return builder
 				.routes()
-				.route(r -> r.path("/pessoas/**").uri("lb://mspessoa"))
-				.route(r -> r.path("/api/v1/assinaturas/**").uri("lb://mspayment"))
+				.route(r -> r.path("/api/v2/**").uri("lb://mspessoa"))
+				.route(r -> r.path("/api/v1/**").uri("lb://mspayment"))
 				.build();
 	}
 }
