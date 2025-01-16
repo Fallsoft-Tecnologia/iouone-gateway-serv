@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    default: dev
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+---
+spring:
+  config:
+    activate:
+      on-profile: hml
+---
+spring:
+  config:
+    activate:
+      on-profile: prd

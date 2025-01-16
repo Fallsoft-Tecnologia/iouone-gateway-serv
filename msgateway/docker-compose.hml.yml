@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        EXPOSE_PORT: 8085
+    container_name: msgateway-service
+    ports:
+      - 8085:8085
+    environment:
+       SPRING_PROFILES_ACTIVE: hml
+       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
+    networks:
+      - backend
+networks:
+  backend:
+    name: backend
+    driver: bridge
